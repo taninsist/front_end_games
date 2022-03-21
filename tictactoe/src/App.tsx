@@ -1,11 +1,14 @@
 import React from 'react';
+import { Game } from './components/GameComp';
 
-function App() {
-  return (
-    <div className="App">
-     <h1>my app</h1>
-    </div>
-  );
+
+export class App extends React.Component {
+  render() {
+
+    return (
+      <div className='app'>
+        <Game />
+      </div>
+    )
+  }
 }
-
-export default App;
