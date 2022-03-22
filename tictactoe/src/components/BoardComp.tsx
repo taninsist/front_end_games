@@ -9,6 +9,11 @@ interface IProps {
     isGameOver?: boolean //游戏是否结束
 }
 
+/**
+ * 棋盘组件，包裹9个棋子组件
+ * @param props 
+ * @returns 
+ */
 const BoardComp: React.FC<IProps> = function (props: IProps) {
 
     const isGameOver = props.isGameOver!  //! 非空断言，可以去掉 undefined

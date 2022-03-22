@@ -9,6 +9,9 @@ interface IStats {
     nextChess: ChessType.red | ChessType.black
 }
 
+/**
+ * 游戏组件，控制整个游戏的进程
+ */
 export class Game extends React.Component<{}, IStats> {
 
     state: IStats = {

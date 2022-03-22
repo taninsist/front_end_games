@@ -7,6 +7,11 @@ interface IProps {
     onClick?: () => void
 }
 
+/**
+ * 单个棋子组件， 该游戏有一个棋盘，9个棋子
+ * @param param 
+ * @returns 
+ */
 export function ChessComp({ type, onClick }: IProps) {
     let chess = null
     if (type === ChessType.red) {

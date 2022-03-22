@@ -7,6 +7,11 @@ interface IProps {
     next: ChessType.red | ChessType.black
 }
 
+/**
+ * 
+ * @param props 游戏状态，显示游戏的进程
+ * @returns 
+ */
 export function GameStatusComp(props: IProps) {
 
     let content: JSX.Element;
