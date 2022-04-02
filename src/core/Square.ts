@@ -14,6 +14,7 @@ export class Square {
 
     set viewer(v) {
         this._viewer = v;
+        this._viewer?.shwo()
     }
 
     set point(val) {

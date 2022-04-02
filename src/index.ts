@@ -1,28 +1,18 @@
-import { Square } from "./core/Square"
-import { IViewer } from "./core/types"
+import { Game } from "./core/Game"
+import { GamePageViewer } from "./core/viewer/GamePageViewer";
+import $ from "jquery"
 
-class SquareConsoleViewer implements IViewer {
-    shwo(): void {
-        console.log(this.square.point, this.square.color);
+const g = new Game(new GamePageViewer());
 
-    }
-    remove(): void {
-    }
 
-    constructor(private square: Square) {
 
-    }
+$(".stopBtn").on("click", function () {
+    g.pause()
+})
+$(".startBtn").on("click", function () {
+    g.start()
 
-}
 
-const sq = new Square({ x: 1, y: 1 }, "red")
-
-sq.viewer = new SquareConsoleViewer(sq);
-sq.viewer.shwo()
-
-sq.point = {
-    x: 5,
-    y: 1
-}
+})
 
 export { }
