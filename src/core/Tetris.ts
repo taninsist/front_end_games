@@ -21,9 +21,25 @@ export class TShape extends SquareGroup {
             { x: 1, y: 0 },
         ], _centerPoint, _color);
     }
+}
 
-    //覆盖重写父级的 旋转方法
-
+/**
+ * $ $
+ * $&$ 
+ * 
+ */
+export class UShape extends SquareGroup {
+    constructor(
+        _centerPoint: IPoint,
+        _color: string) {
+        super([
+            { x: -1, y: -1 },
+            { x: -1, y: 0 },
+            { x: 0, y: 0 },
+            { x: 1, y: 0 },
+            { x: 1, y: -1 },
+        ], _centerPoint, _color);
+    }
 }
 
 /**    
@@ -146,6 +162,7 @@ export class LineShape extends SquareGroup {
 export const shapes = [
     TShape,
     LShape,
+    UShape,
     LMirrorShape,
     SShape,
     SMirrorShape,

@@ -6,5 +6,10 @@ export default {
     NextPanelSize: {
         width: 6,
         height: 3
-    }
+    },
+    levels: [
+        { score: 0, duration: 1500 },
+        { score: 200, duration: 1000 },
+        { score: 500, duration: 300 }
+    ]
 }

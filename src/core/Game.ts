@@ -20,7 +20,7 @@ export class Game {
   //计时器
   private _timer?: number
   //自动下落时间
-  private _duration: number = 1000;
+  private _duration: number;
   //当前游戏中，已保存的小方块
   private _exists: Square[] = [];
   //当前获取的积分
@@ -33,12 +33,24 @@ export class Game {
   set score(v: number) {
     this._score = v
     this._viewer.showScore(this._score);
+    console.log(GameConfig.levels.filter(it => it.score < v));
+
+    const level = GameConfig.levels.filter(it => it.score <= v).pop()!
+    if (level.duration !== this._duration) {
+      clearInterval(this._timer);
+      this._timer = undefined;
+      this._duration = level.duration;
+      this.autoDrop()
+    }
+
+
   }
   get score() {
     return this._score;
   }
 
   constructor(private _viewer: GameViewer) {
+    this._duration = GameConfig.levels[0].duration;
     this._nextTetris = createTetris(nextOrgin); //没有实际含义的代码，只是让ts不报错
     this.createNext()
     this._viewer.init(this);
