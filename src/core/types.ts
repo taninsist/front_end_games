@@ -62,7 +62,6 @@ export enum GameStatus {
    * 游戏结束
    */
   over
-
 }
 
 /**
@@ -74,7 +73,10 @@ export interface GameViewer {
    * @param game 游戏类 
    */
   init(game: Game): void
+
+  /**
+   * 更新分数
+   * @param v 
+   */
+  updataScore(v: number): void
 }
-
-
-

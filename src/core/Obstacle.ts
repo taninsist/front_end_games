@@ -12,18 +12,19 @@ export class Obstacle extends Square {
   onMove(): void {
     if (this.point.x <= -this.width) {
       this.viewer.clear()
-    }
 
+    }
   }
 
   constructor(_point: IPoint, _background: string, _width: number, _height: number, _speed: ISpeed) {
     super(_point, _background, _width, _height, _speed);
+
   }
 
 }
 
 /**
- * 矮的
+ * 矮的 5分
  */
 class shortCactus extends Obstacle {
   constructor() {
@@ -39,9 +40,13 @@ class shortCactus extends Obstacle {
         y: 0
       }
     )
+
   }
 }
 
+/**
+ * 高的 10分
+ */
 class highCactus extends Obstacle {
   constructor() {
     super(
@@ -59,6 +64,9 @@ class highCactus extends Obstacle {
   }
 }
 
+/**
+ * 胖的 15分
+ */
 class fatCactus extends Obstacle {
   constructor() {
     super(
@@ -76,6 +84,9 @@ class fatCactus extends Obstacle {
   }
 }
 
+/**
+ * 便便障碍物 5分
+ */
 class shitCactus extends Obstacle {
   constructor() {
     super(
@@ -109,7 +120,7 @@ export class ObstacleProducer {
   //计时器
   private _timer: number | null = null;
   //间隔
-  private _interval: number = 1500;
+  private _interval: number = 1000;
   //
   private _obstacles: Obstacle[] = [];
 
@@ -143,8 +154,8 @@ export class ObstacleProducer {
         const ob = this._obstacles[i]
         if (this.isRemoveView(ob)) {
 
-          // this._obstacles.splice(i);
-          // i--;
+          this._obstacles.splice(i, 1);
+          i--;
         }
       }
 

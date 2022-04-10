@@ -1,8 +1,6 @@
-import { Dinosaur } from "./core/Dinosaur";
+
 import { Game } from "./core/Game"
-import GameConfig from "./core/GameConfig";
 import { GamePageViewer } from "./core/viewer/GamePageViewer"
-import { SquarePageViewer } from "./core/viewer/SquarPageViewer";
 import $ from "jquery"
 
 

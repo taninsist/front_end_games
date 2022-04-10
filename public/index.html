@@ -17,14 +17,29 @@
       height: 100vh;
       background-color: #000;
       overflow: hidden;
-
+      transition: background .9s;
     }
 
     #container {
       position: relative;
       margin: 20px auto;
-      background-color: #fff;
+      /* background-color: #fff; */
       overflow: hidden;
+      border: 1px solid #eee;
+
+    }
+
+    .score_box {
+      color: #686868;
+      margin: 0 150px;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+      text-align: right;
+    }
+
+    .event {
+      margin-top: 30px;
+      text-align: center;
     }
   </style>
 
@@ -34,8 +49,16 @@
 <body>
   <div id="root">
     <div id="container">
+      <div class="score_box">
+        <i>分值：<span class="score">00</span></i>
+      </div>
 
       <div id="track"></div>
+    </div>
+
+    <div class="event">
+      <p>"空格" 跳跃</p>
+      <p>"回车" 开始/暂停</p>
     </div>
 
   </div>

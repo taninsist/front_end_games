@@ -7,7 +7,7 @@ import shit from "../assets/shit.png"
 import dinosaur_quiet from "../assets/dinosaur_quiet.png"
 import dinosaur_running from "../assets/dinosaur_running.gif"
 
-const PANEL_WIDTH = 600; //面板的宽度
+const PANEL_WIDTH = 800; //面板的宽度
 const PANEL_HEIGHT = 150 + 100; //面板的高度
 
 const LAND_WIDTH = PANEL_WIDTH; //土地的宽度
@@ -25,12 +25,6 @@ export default {
   LAND_HEIGHT,
 
   DINOSAUR_SIZE,
-
-
-
-  /**
-   * 游戏面板的大小
-   */
 
   /**
    * 恐龙的大小
@@ -56,6 +50,12 @@ export default {
   /**
    * 恐龙
    */
-  dinosaurs: [dinosaur_quiet, dinosaur_running]
+  dinosaurs: [dinosaur_quiet, dinosaur_running],
+
+  levels: [
+    { score: 0, interval: 24 / 1000 },
+    { score: 1000, interval: 32 / 1000 },
+    { score: 2000, interval: 40 / 1000 }
+  ]
 
 }
