@@ -21,7 +21,7 @@ export class GamePageViewer implements GameViewer {
       height: GameConfig.PANEL_HEIGHT + "px"
     })
 
-    this.updataScore(0);
+    this.updateScore(0);
 
     this.bindEvent(game)
 
@@ -31,7 +31,7 @@ export class GamePageViewer implements GameViewer {
    * 更新分数
    * @param v 
    */
-  updataScore(v: number) {
+  updateScore(v: number) {
     this.scoreDom.text(v);
     
     if (v > 100 && Math.floor(v / 100) % 7 == 4 || Math.floor(v / 100) % 7 == 3) {

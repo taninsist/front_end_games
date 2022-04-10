@@ -39,7 +39,7 @@ export class Game {
 
   set score(v: number) {
     this._score = v;
-    this._viewer.updataScore(this._score);
+    this._viewer.updateScore(this._score);
 
     const level = GameConfig.levels.filter(it => it.score <= v).pop()!;
     if (level.interval != this._interval) {

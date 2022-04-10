@@ -78,5 +78,5 @@ export interface GameViewer {
    * 更新分数
    * @param v 
    */
-  updataScore(v: number): void
+  updateScore(v: number): void
 }
